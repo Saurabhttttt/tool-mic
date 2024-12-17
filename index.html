@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Script Comparison Tool</title>
+    <link rel="stylesheet" href="style.css">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/mammoth/1.4.2/mammoth.browser.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/2.4.0/jspdf.umd.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/html2canvas/1.4.1/html2canvas.min.js"></script>
+</head>
+<body>
+    <h1>Script Comparison Tool</h1>
+    <p>Enter two scripts to compare. Differences will be highlighted word by word, and Script 2's accuracy will be displayed.</p>
+
+    <!-- File Upload for Script 1 -->
+    <input accept=".txt,.docx" id="fileUpload" type="file" onchange="handleFileUpload(event)" />
+    <div id="wordCount1" class="word-count">Word Count: 0</div>
+    <textarea id="script1" placeholder="Enter Script 1" oninput="updateWordCount()"></textarea>
+
+    <div id="wordCount2" class="word-count">Word Count: 0</div>
+    <textarea id="script2" placeholder="Enter Script 2" oninput="updateWordCount()"></textarea>
+
+    <button onclick="compareScripts()">Compare Scripts</button>
+    <button onclick="downloadReport()">Download Report</button>
+
+    <div class="output" id="output"></div>
+
+    <script src="script.js"></script>
+</body>
+</html>
